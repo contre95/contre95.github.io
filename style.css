@@ -1,0 +1,106 @@
+html,
+body {
+    margin: 0 auto;
+    padding: 0;
+    background-color: black;
+}
+
+a:visited,
+a:link {
+    color: white !important;
+    text-decoration: none;
+}
+
+a:active,
+a:hover {
+    color: white !important;
+    text-decoration: underline;
+}
+.stdin {
+    width: 70%;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: white;
+}
+
+.terminal {
+    /* position: absolute; */
+    text-align: left;
+    /* border: solid white 1px; */
+    min-width: 800px;
+    min-height: 300px;
+    text-align: center;
+    margin-top: calc(5%);
+    margin-left: calc(5%);
+}
+
+.ls a:visited,
+.ls a:link, .ls .vue-link {
+    color: #5bb0f7 !important;
+    text-decoration: none;
+    margin-left: 3vw;
+    cursor: pointer;
+}
+
+.ls a:active,
+.ls a:hover {
+    color: #5bb0f7 !important;
+    text-decoration: underline;
+}
+
+p, span {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 20px;
+    color: white;
+    padding: 0% ;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+.notes {
+    line-height: 0.4em;
+}
+.notes .directory{
+    color: #5bb0f7 !important;
+}
+
+.dir {
+    color: #0085f1;
+}
+
+.user {
+    /* color: green; */
+    color: #00f100;
+}
+
+blink {
+    -webkit-animation: 2s linear infinite condemned_blink_effect;
+}
+
+
+@keyframes condemned_blink_effect {
+    0% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: hidden;
+    }
+    100% {
+        visibility: visible;
+    }
+}
+
+br {
+    content: '';
+    margin: 2px;
+    display: block;
+    font-size: 24%;
+}
+
+.link {
+    color: #5bb0f7 !important;
+    background-color: rgba(147, 147, 211, 0.3);
+}

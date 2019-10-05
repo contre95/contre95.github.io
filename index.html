@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Vue</title>
+    <script src="https://unpkg.com/vue"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+    <div class="terminal">
+        <div class="ls">
+
+        <p><span class="user">{{ user }}@www</span>:<span class="dir"><strong>~</strong></span>$ ls -la</p>
+        <p>
+            <span>total 23</span> <br>
+            <span>drwxr-xr-x 2 {{ user }} {{ user }}  4096 Nov 06  2015 <a target="_blank" href="http://linkedin.com/in/contre95">linkedin</a></span> <br>
+            <span>lrwxr--r-- 2 {{ user }} {{ user }}  4096 Sep 09  2019 <a class="link" target="_blank" href="http://blog.lucascontre.site">b.log</a><span style="color: white"> -></span><a class="link" target="_blank" href="http://blog.lucascontre.site" style="margin-left: 10px;">blog.lucascontre.site</a></span> <br>
+            <span>drwxr-xr-x 2 {{ user }} {{ user }}  4096 Oct 17  2017 <a target="_blank" href="http://github.com/contre95">.git</a></span> <br>
+            <span>-rwxr--r-- 2 {{ user }} {{ user }}  4096 Sep 10  2019 <a href="https://github.com/contre95/cv/raw/master/examples/lucas_contreras_cv.pdf">resume.pdf</a></span> <br>
+            <span>drwxr-xr-x 2 {{ user }} {{ user }}  4096 Sep 24  2016 <a target="_blank" href="http://twitter.com/contre95">twitter</a></span> <br>
+            <span>-rwxr--r-- 2 {{ user }} {{ user }}  4096 Sep 10  2019 <a class="vue-link"  target="_blank" v-on:click="stdin = 'cat contre.asc'">contre.asc</a></span> <br>
+            <span>drwxr-xr-x 2 {{ user }} {{ user }}  4096 Sep 10  2019 <a class="vue-link" target="_blank" v-on:click="stdin = 'tree notes'">notes</a></span> <br>
+        </p>
+        </div>
+
+        <p>
+            <span class="user">{{ user }}@www</span>:<span class="dir"><strong>~</strong></span>$ <input class="stdin" v-model="stdin" value="" autofocus />
+        </p>
+        <!--        Notes               -->
+        <div class="notes" v-if="stdin === 'tree notes'">
+            <p><span class="directory">notes</span></p>
+            <p>├── <span class="directory">cheat-sheets</span></p>
+            <p>│ &nbsp; ├── <a href="https://github.com/contre95/notes/blob/master/cheat-sheets/algebra_1-2.pdf">algebra_1-2.pdf</a></p>
+            <p>│ &nbsp; ├── <a href="https://github.com/contre95/notes/blob/master/cheat-sheets/analisis_matematico_1-2.pdf">analisis_matematico_1-2.pdf</a></p>
+            <p>│ &nbsp; ├── <a href="https://github.com/contre95/notes/blob/master/cheat-sheets/crontab.pdf">crontab.pdf</a></p>
+            <p>│ &nbsp; ├── <a href="https://github.com/contre95/notes/blob/master/cheat-sheets/fisica_1.pdf">fisica_1.pdf</a></p>
+            <p>│ &nbsp; └── <a href="https://github.com/contre95/notes/blob/master/cheat-sheets/metodos_numericos.pdf">metodos_numericos.pdf</a></p>
+            <p>├── <span class="directory">notes</span></p>
+            <p>│ &nbsp; ├──<span class="directory"> not-university</span></p>
+            <p>│ &nbsp; │ &nbsp; ├── <a href="https://github.com/contre95/notes/blob/master/notes/not-university/AWS_APN_TCO.pdf">AWS_APN_TCO.pdf</a></p>
+            <p>│ &nbsp; │ &nbsp; ├── <a href="https://github.com/contre95/notes/blob/master/notes/not-university/AWS_APN_Technical_Professional.pdf">AWS_APN_Technical_Professional.pdf</a></p>
+            <p>│ &nbsp; │ &nbsp; ├── <a href="https://github.com/contre95/notes/blob/master/notes/not-university/Docker_Concepts.pdf">Docker_Concepts.pdf</a></p>
+            <p>│ &nbsp; │ &nbsp; ├── <a href="https://github.com/contre95/notes/blob/master/notes/not-university/K8S_Concepts.pdf">K8S_Concepts.pdf</a></p>
+            <p>│ &nbsp; │ &nbsp; └── <a href="https://github.com/contre95/notes/blob/master/notes/not-university/NodeJS.pdf">NodeJS.pdf</a></p>
+            <p>│ &nbsp; └── <span class="directory">university</span></p>
+            <p>│ &nbsp; &nbsp; &nbsp; └──  <a href="https://github.com/contre95/notes/blob/master/notes/university/Quimica_general.pdf">Quimica_general.pdf</a></p>
+            <p>
+                <br>
+            </p>
+            <p>
+					<span style="color: gray;">
+					4 directories, 12 files
+					</span>
+                <br>
+            </p>
+        </div>
+        <!--        Git                 -->
+        <div class="git" v-if="stdin === 'git remote -v'">
+            <p>
+                origin	https://github.com/contre95/ls-la.git (fetch) <br>
+                origin	https://github.com/contre95/ls-la.git (push)
+            </p>
+        </div>
+
+        <!--        GPG Public Key      -->
+        <div class="gpg" v-if="stdin === 'cat contre.asc'">
+                         <p style="color:white; font-size: 0.9vw;">
+                                -----BEGIN PGP PUBLIC KEY BLOCK----- <br><br>
+
+
+                                mQGNBF1q/MkBDACgvpsXfkI0MVfrL57dvevSp+e53eKQZS4UJ/8k85+NUMi3NvWA <br>
+                                a7gfwmbl+b3/V+Bny4lXemyIoddJgV5RiSjaXm8SoKhigSpet3m0cZ81LN+m7Kce <br>
+                                vsgXnLlOHLGP5WjousAr1ds5J6PUonFldz2cMsMx8AQwn9N+KyBTxAf9YMAyabQ2 <br>
+                                2Jbox7XIgbhukyNaN3lGh2UUV2xP9kssGCnqX09vff7DC02gLy/GwvuumDTY6W1I <br>
+                                bSt5g8dZnk+SJQ4v6R4EkLiw+eQeLa1PUwq4IQd55W/6lDj2mxuZA0B1K56Hknnn <br>
+                                rbRuRU+/G4kJbcaPu+nQVlJI5ejL/3kh0RpL46WkbjL9KbkSy1DvC36ZnrKEbggP <br>
+                                W5xfdW9zwE4O15j9kmBSokLT9YMtUUt5hcZdzu329N/JqbZwGMLZ4yFeFzPaDTHK <br>
+                                FZrQw+3QVzFLt1COOKSjEjRdh5o0kNPkg/GG27m/XVOTCx3rHGohus1g5+o6SnP6 <br>
+                                x9zwpwmSbpooOG8AEQEAAbQpTHVjYXMgQ29udHJlcmFzIDxsdWNhc2NvbnRyZTk1 <br>
+                                QGdtYWlsLmNvbT6JAbAEEwEKABoECwkIBwIVCgIWAQIZAQWCXWr8yQKeAQKbAwAK <br>
+                                CRDKRiopjjMrBTyXC/9lYee1xV/KXmlSjmMQbefuhvmtN+enzAPxWJO/thiLEcaV <br>
+                                njmukO1pu5UIfDKXIS1YgZckyzJpDTaAglKsQTmfP/vRaOsRCfnRl3mIbuBaYnZa <br>
+                                7sPW2mnXXv+VuZ9w8IC3ZYbBJjlKMpJzmZBI77jwO2DiWmz4b8ukbuE4gkI3dSRP <br>
+                                BRjpELtyvqAxbh4s7CkXkix0tqJiOAsp8ONG1lgb5Fda/x0fQOKIyWmJFocQ01JP <br>
+                                ZLmFouZCAmm5pboRsAHjikslZYyaCnfbFNJtFcmLtHcrbMSxZYqfUm6Gzh6sQrdE <br>
+                                PxpUC2XRsq9BPKkoKe8bWjLci5VG4hJ+MI5380s4UoYIyMgrDzkpvw6JopMdfts3 <br>
+                                PoCGcv0N4Ad9oF7r7C0kJGuvpuszg8lySG1WF4SjMw5fhI9OO0u2XfgpMOdyQGG/ <br>
+                                XXjGAZPNB1yzU+qFIatJE/jFCue5lMZfEbyDbpkqvGIqU9nhxcPKFg0OH+nCTdRS <br>
+                                xpeomwYETZS49vm5daS5AY0EXWr8yQEMAJz4MjP+93UwmdgIAPn3sQiOE5OnmJiJ <br>
+                                Pp2l/6GGD5ts4uFD+B/TJv5C+Tqr0iY2rUTj5aHuhHAaW7i93xfIEhu7nrRmCja0 <br>
+                                4HlVP7tIcegZtHsx25oRiE5Rc7uNdCCMm95tzwAQWmfZ/4vT/D+yZJKnX47Awkxd <br>
+                                qfaVBbOQJIHRlYIDSeUrxVoYUbafUKuz7yw8LkGa4kIFOBnO2rjZS6M9WJDiJBm+ <br>
+                                vjK+WbQ5y5301fHo+5EnJC16s45n1WpijpOniIUw3vRTm8d/GtGw+enfo3DV2mrc <br>
+                                LVsLCczRXc0MRb4Jm745P+rxLERzyGoOCxE8ewwrbEY5TOgxJNN0i/AugFlCg+5u <br>
+                                /Yfzx0eMB/a7ENHMZTF9Hjgd8WzvvqvjPuieHYtB3ffkDMROlnEw9zWKbDfVtN8o <br>
+                                Pan4/Lt83o2lQVj/3l1VUL+bpbaQ5XEFcqVONt9ddMOTA1Ht8kdLglHPVWdjauyR <br>
+                                j0S06yue2wLfnFBl+18Njojc6RsPIUC69QARAQABiQGfBBgBCgAJBYJdavzJApsM <br>
+                                AAoJEMpGKimOMysFIGUL/R361n693GGQZ274+DLE9Y/BXsHsqYVrCejfdaP6YnIB <br>
+                                vWWF/RDnMxXdTxnrikP21qyR7I9TyEYaWBOsJeGZQDq+duw7ifpnlqZVaQ3ydl8S <br>
+                                Uuz4mVVvZ54az0arBz6J17ip+HpnPAaBQbqLi5c8IgcHLBiqexsP8zJcLExBHhHK <br>
+                                1rF1WH7Ec/ssvGj66uaNTUw5tPvMpajPwTTLXo9QDVgIjv1DouexBqyQX05N5Ofc <br>
+                                RMf0TqPK58t1EpPZ9E36uD0G0jO6gghqOGO1coAkA2dI9sf93Z5qW5jBV/kPYVob <br>
+                                BAoPyw2ECEvDjwplqtuqCRwsCuHC5BOp5Wdg+9NEejViEthoal5fDOF/nKTS99Ep <br>
+                                lO6xq3osoWzdT/6bj4osNlbjpYU2cb4nD0cj13w7OceSm/Q7pIK/4xyHswSyYuoh <br>
+                                Uzg2qIUuAsgYc/DUjUQEOOaJYC6nwBkXqsd+r72QPdk4SI21XE+sAYiTq7+J3xjs <br>
+                                ofHpG2vR3Fp05aFZ6SnqVw== <br>
+                                =sAZO <br><br>
+                                -----END PGP PUBLIC KEY BLOCK----- <br>
+                         </p>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            user: 'lucascontreras',
+            stdin: '',
+            docsURL: 'http://vuejs.org/guide/',
+            discordURL: 'https://chat.vuejs.org',
+            forumURL: 'http://forum.vuejs.org/'
+        },
+        methods: {
+            humanizeURL: function (url) {
+                return url
+                    .replace(/^https?:\/\//, '')
+                    .replace(/\/$/, '')
+            }
+        }
+    });
+</script>
+</body>
+</html>
