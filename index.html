@@ -10,8 +10,9 @@
 <div id="app">
     <div class="terminal">
         <div class="ls">
-
-        <p><span class="user">{{ user }}@www</span>:<span class="dir"><strong>~</strong></span>$ ls -la</p>
+       <span>
+        <span class="user">{{ user }}@www</span>:<span class="dir"><strong>~</strong></span>$ ls -la
+        </span>
         <p>
             <span>total 23</span> <br>
             <span>drwxr-xr-x 2 {{ user }} {{ user }}  4096 Nov 06  2015 <a target="_blank" href="http://linkedin.com/in/contre95">linkedin</a></span> <br>
@@ -23,10 +24,10 @@
             <span>drwxr-xr-x 2 {{ user }} {{ user }}  4096 Sep 10  2019 <a class="vue-link" target="_blank" v-on:click="stdin = 'tree notes'">notes</a></span> <br>
         </p>
         </div>
+        <span>
+        <span class="user">{{ user }}@www</span>:<span class="dir"><strong>~</strong></span>$ <input class="stdin" v-model="stdin" value="" autofocus />
+        </span>
 
-        <p>
-            <span class="user">{{ user }}@www</span>:<span class="dir"><strong>~</strong></span>$ <input class="stdin" v-model="stdin" value="" autofocus />
-        </p>
         <!--        Notes               -->
         <div class="notes" v-if="stdin === 'tree notes'">
             <p><span class="directory">notes</span></p>
@@ -65,7 +66,7 @@
 
         <!--        GPG Public Key      -->
         <div class="gpg" v-if="stdin === 'cat contre.asc'">
-                         <p style="color:white; font-size: 0.9vw;">
+                         <p style="color:white;">
                                 -----BEGIN PGP PUBLIC KEY BLOCK----- <br><br>
 
 

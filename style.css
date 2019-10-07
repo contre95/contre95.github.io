@@ -1,6 +1,7 @@
 html,
 body {
     margin: 0 auto;
+    font-size: 20px!important;
     padding: 0;
     background-color: black;
 }
@@ -17,30 +18,29 @@ a:hover {
     text-decoration: underline;
 }
 .stdin {
-    width: 70%;
     outline: none;
     background-color: transparent;
     border: none;
-    font-size: 20px;
     color: white;
+
 }
 
 .terminal {
     /* position: absolute; */
-    text-align: left;
+    /*text-align: left;*/
     /* border: solid white 1px; */
-    min-width: 800px;
-    min-height: 300px;
-    text-align: center;
-    margin-top: calc(5%);
-    margin-left: calc(5%);
+    /*min-width: 800px;*/
+    /*min-height: 300px;*/
+    text-align: left;
+    margin-top: 40px;
+    margin-left: 40px;
 }
 
 .ls a:visited,
 .ls a:link, .ls .vue-link {
     color: #5bb0f7 !important;
     text-decoration: none;
-    margin-left: 3vw;
+    margin-left: 10px;
     cursor: pointer;
 }
 
@@ -49,19 +49,17 @@ a:hover {
     color: #5bb0f7 !important;
     text-decoration: underline;
 }
-
+p {
+    line-height: 25px;
+}
 p, span {
     margin-top: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: left;
-    font-size: 20px;
-    color: white;
-    padding: 0% ;
-    font-family: 'Ubuntu Mono', monospace;
-}
 
-.notes {
-    line-height: 0.4em;
+    color: white;
+    padding: 0;
+    font-family: 'Ubuntu Mono', monospace;
 }
 .notes .directory{
     color: #5bb0f7 !important;
@@ -81,6 +79,10 @@ blink {
 }
 
 
+input{
+    font-size: 19px!important;
+}
+
 @keyframes condemned_blink_effect {
     0% {
         visibility: hidden;
@@ -91,13 +93,6 @@ blink {
     100% {
         visibility: visible;
     }
-}
-
-br {
-    content: '';
-    margin: 2px;
-    display: block;
-    font-size: 24%;
 }
 
 .link {
