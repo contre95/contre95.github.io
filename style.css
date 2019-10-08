@@ -74,10 +74,12 @@ p, span {
     color: #00f100;
 }
 
-blink {
-    -webkit-animation: 2s linear infinite condemned_blink_effect;
+@media screen and (max-width: 400px) {
+  #h-mobile {
+    visibility: hidden;
+    display: none;
+  }
 }
-
 
 input{
     font-size: 19px!important;
