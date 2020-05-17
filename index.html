@@ -20,44 +20,12 @@
             <span>drwxr-xr-x 2 {{ user }} {{ user }}  4096 Oct 17  2017 <a target="_blank" href="http://github.com/contre95">.git</a></span> <br>
             <span>-rwxr--r-- 2 {{ user }} {{ user }}  4096 Sep 10  2019 <a href="https://github.com/contre95/cv/raw/master/LaTeX/lucas_contreras_cv.pdf">cv.pdf</a></span> <br>
             <span>drwxr-xr-x 2 {{ user }} {{ user }}  4096 Sep 24  2016 <a target="_blank" href="http://twitter.com/contre95">twitter</a></span> <br>
-            <span>-rwxr--r-- 2 {{ user }} {{ user }}  4096 Sep 10  2019 <a class="vue-link"  target="_blank" v-on:click="stdin = 'cat contre.asc'">contre.asc</a></span> <br>
-            <span>drwxr-xr-x 2 {{ user }} {{ user }}  4096 Sep 10  2019 <a class="vue-link" target="_blank" v-on:click="stdin = 'tree notes'">notes</a></span> <br>
+            <span>-rwxr--r-- 2 {{ user }} {{ user }}  4096 Sep 10  2019 <a class="vue-link"  target="_blank" v-on:click="stdin = 'cat contre.gpg'">contre.gpg</a></span> <br>
         </p>
         </div>
         <span>
         <span class="user">{{ user }}@www</span>:<span class="dir"><strong>~</strong></span>$ <input class="stdin" v-model="stdin" value="" autofocus />
         </span>
-
-        <!--        Notes               -->
-        <div class="notes" v-if="stdin === 'tree notes'">
-            <p><span class="directory">notes</span></p>
-            <p>&#9500&#9472&#9472 <span class="directory">cheat-sheets</span></p>
-            <p>&#9474 &nbsp; &#9500&#9472&#9472 <a target="_blank" href="https://github.com/contre95/notes/blob/master/cheat-sheets/algebra_1-2.pdf">algebra_1-2.pdf</a></p>
-            <p>&#9474 &nbsp; &#9500&#9472&#9472 <a target="_blank" href="https://github.com/contre95/notes/blob/master/cheat-sheets/analisis_matematico_1-2.pdf">analisis_matematico_1-2.pdf</a></p>
-            <p>&#9474 &nbsp; &#9500&#9472&#9472 <a target="_blank" href="https://github.com/contre95/notes/blob/master/cheat-sheets/crontab.pdf">crontab.pdf</a></p>
-            <p>&#9474 &nbsp; &#9500&#9472&#9472 <a target="_blank" href="https://github.com/contre95/notes/blob/master/cheat-sheets/fisica_1.pdf">fisica_1.pdf</a></p>
-            <p>&#9474 &nbsp; &#9492&#9472&#9472 <a target="_blank" href="https://github.com/contre95/notes/blob/master/cheat-sheets/metodos_numericos.pdf">metodos_numericos.pdf</a></p>
-            <p>&#9500&#9472&#9472 <span class="directory">notes</span></p>
-            <p>&#9474 &nbsp; &#9500&#9472&#9472<span class="directory"> not-university</span></p>
-            <p>&#9474 &nbsp; &#9474 &nbsp; &#9500&#9472&#9472 <a target="_blank"	href="https://github.com/contre95/notes/blob/master/notes/not-university/DoD_Model.pdf">DoD_Model.pdf</a></p>
-            <p>&#9474 &nbsp; &#9474 &nbsp; &#9500&#9472&#9472 <a target="_blank"	href="https://github.com/contre95/notes/blob/master/notes/not-university/OSI_Model.pdf">OSI_Model.pdf</a></p>
-            <p>&#9474 &nbsp; &#9474 &nbsp; &#9500&#9472&#9472 <a target="_blank"	href="https://github.com/contre95/notes/blob/master/notes/not-university/AWS_APN_TCO.pdf">AWS_APN_TCO.pdf</a></p>
-            <p>&#9474 &nbsp; &#9474 &nbsp; &#9500&#9472&#9472 <a target="_blank"	href="https://github.com/contre95/notes/blob/master/notes/not-university/AWS_APN_Technical_Professional.pdf">AWS_APN_Technical_Professional.pdf</a></p>
-            <p>&#9474 &nbsp; &#9474 &nbsp; &#9500&#9472&#9472 <a target="_blank" href="https://github.com/contre95/notes/blob/master/notes/not-university/Docker_Concepts.pdf">Docker_Concepts.pdf</a></p>
-            <p>&#9474 &nbsp; &#9474 &nbsp; &#9500&#9472&#9472 <a target="_blank" href="https://github.com/contre95/notes/blob/master/notes/not-university/K8S_Concepts.pdf">K8S_Concepts.pdf</a></p>
-            <p>&#9474 &nbsp; &#9474 &nbsp; &#9492&#9472&#9472 <a target="_blank" href="https://github.com/contre95/notes/blob/master/notes/not-university/NodeJS.pdf">NodeJS.pdf</a></p>
-            <p>&#9474 &nbsp; &#9492&#9472&#9472 <span class="directory">university</span></p>
-            <p>&#9474 &nbsp; &nbsp; &nbsp; &#9492&#9472&#9472  <a target="_blank" href="https://github.com/contre95/notes/blob/master/notes/university/Quimica_general.pdf">Quimica_general.pdf</a></p>
-            <p>
-                <br>
-            </p>
-            <p>
-					<span style="color: gray;">
-					4 directories, 12 files
-					</span>
-                <br>
-            </p>
-        </div>
         <!--        Git                 -->
         <div class="git" v-if="stdin === 'git remote -v'">
             <p>
@@ -67,7 +35,7 @@
         </div>
 
         <!--        GPG Public Key      -->
-        <div class="gpg" v-if="stdin === 'cat contre.asc'">
+        <div class="gpg" v-if="stdin === 'cat contre.gpg'">
                          <p style="color:white;">
 				  					            -----BEGIN PGP PUBLIC KEY BLOCK----- <br>
 
