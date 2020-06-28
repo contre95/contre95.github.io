@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Lucas Contre b.log</title>
   
-  <subtitle>Welcome to lucascontre.site, a personal blog where I post my experience as a { whatever the current trendy job position title for &quot;The techy guy&quot; is. }</subtitle>
+  <subtitle>Welcome to lucascontre.site, a personal blog where I post my experience as a { whatever the current trendy title for &quot;The techy guy&quot; is. }</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.lucascontre.site/"/>
