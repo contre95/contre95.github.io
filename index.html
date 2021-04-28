@@ -41,6 +41,7 @@
             <span>drwxr-xr-x 2 {{ user }} {{ user }}  4096 Sep 24  2016 <a target="_blank" href="http://twitter.com/contre95">twitter</a></span> <br>
             <span>-rwxr--r-- 2 {{ user }} {{ user }}  4096 Feb 10  2020 <a class="vue-link"  target="_blank" v-on:click="stdin = 'cat contre.gpg'">contre.gpg</a></span> <br>
             <span>-rwxr--r-- 2 {{ user }} {{ user }}  4096 Jun 02  2020 <a class="vue-link"  target="_blank" v-on:click="stdin = 'cat btc'">btc</a></span> <br>
+            <span>-rwxr--r-- 2 {{ user }} {{ user }}  4096 Apr 27  2021 <a class="vue-link"  target="_blank" v-on:click="stdin = 'calendar'">calendar.ics</a></span> <br>
         </p>
         </div>
         <span>
@@ -59,6 +60,13 @@
             </p>
         </div>
 
+        <div class="calendar" v-if="stdin === 'calendar'">
+ <!--<iframe src="https://calendar.google.com/calendar/embed?height=700&amp;wkst=2&amp;bgcolor=%23101010&amp;ctz=America%2FArgentina%2FBuenos_Aires&amp;src=bHVjYXNjb250cmU5NUBnbWFpbC5jb20&amp;src=bHVjYXMuY29udHJlcmFzQG1lcmNhZG9saWJyZS5jb20&amp;color=%234285F4&amp;color=%23F6BF26&amp;mode=WEEK&amp;title=%20&amp;hl=en_GB" style="border-width:0" width="800" height="700" frameborder="0" scrolling="no"></iframe>-->
+ <br>
+ <iframe src="https://calendar.google.com/calendar/embed?height=700&amp;wkst=2&amp;bgcolor=%23fffef5&amp;ctz=America%2FArgentina%2FBuenos_Aires&amp;src=bHVjYXNjb250cmU5NUBnbWFpbC5jb20&amp;src=bHVjYXMuY29udHJlcmFzQG1lcmNhZG9saWJyZS5jb20&amp;color=%234285F4&amp;color=%23F6BF26&amp;mode=WEEK&amp;title=%20&amp;hl=en_GB" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+ <!--<iframe src="https://calendar.google.com/calendar/embed?height=700&amp;wkst=2&amp;bgcolor=%23616161&amp;ctz=America%2FArgentina%2FBuenos_Aires&amp;src=bHVjYXNjb250cmU5NUBnbWFpbC5jb20&amp;src=bHVjYXMuY29udHJlcmFzQG1lcmNhZG9saWJyZS5jb20&amp;color=%234285F4&amp;color=%23F6BF26&amp;mode=WEEK&amp;title=%20&amp;hl=en_GB" style="border-width:0" width="800" height="700" frameborder="0" scrolling="no"></iframe>-->
+                        <!--<iframe src="https://calendar.google.com/calendar/embed?height=700&amp;wkst=2&amp;bgcolor=%237986CB&amp;ctz=America%2FArgentina%2FBuenos_Aires&amp;src=bHVjYXNjb250cmU5NUBnbWFpbC5jb20&amp;src=bHVjYXMuY29udHJlcmFzQG1lcmNhZG9saWJyZS5jb20&amp;color=%234285F4&amp;color=%23F6BF26&amp;mode=WEEK&amp;title=%20&amp;hl=en_GB" style="border-width:0" width="800" height="700" frameborder="0" scrolling="no"></iframe>-->
+        </div>
         <!--        GPG Public Key      -->
         <div class="gpg" v-if="stdin === 'cat contre.gpg'">
                          <p style="color:white;">
@@ -148,16 +156,6 @@
         data: {
             user: 'lucascontreras',
             stdin: '',
-            docsURL: 'http://vuejs.org/guide/',
-            discordURL: 'https://chat.vuejs.org',
-            forumURL: 'http://forum.vuejs.org/'
-        },
-        methods: {
-            humanizeURL: function (url) {
-                return url
-                    .replace(/^https?:\/\//, '')
-                    .replace(/\/$/, '')
-            }
         }
     });
 </script>
