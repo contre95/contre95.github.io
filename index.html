@@ -150,13 +150,23 @@
     </div>
 </div>
 
+<script src="https://unpkg.com/vue-router"></script>
 <script>
+    var router = new VueRouter({
+    mode: 'history',
+    routes: []
+});
     var app = new Vue({
+        router, 
         el: '#app',
         data: {
             user: 'lucascontreras',
-            stdin: '',
-        }
+            stdin: '' ,
+        },
+       mounted: function() {
+        q = this.$route.query.q
+        this.stdin = this.$route.query.stdin
+    }, 
     });
 </script>
 </body>
