@@ -23,7 +23,8 @@ a:hover {
     outline: none;
     background-color: transparent;
     border: none;
-    color: white;
+    color: gray;
+    width: 500px;
 
 }
 

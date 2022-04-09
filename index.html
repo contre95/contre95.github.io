@@ -24,148 +24,27 @@
 <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-<div id="app">
-<router-view/>
+<div>
     <div class="terminal">
         <div class="ls">
        <span>
-        <span class="user">{{ user }}@www</span>:<span class="dir"><strong>~</strong></span>$ ls <span id="h-mobile ">-loa</span>
-        </span>
+        <span class="user">contre@www</span>:<span class="dir"><strong>~</strong></span>$ ls <span id="h-mobile ">-loa</span></span>
         <p>
-            <span>total 23</span> <br>
-            <span>drwxr-xr-x 2 {{ user }} 4096 Nov 06  2015 <a target="_blank" href="http://linkedin.com/in/contre95">linkedin</a></span> <br>
-            <span>drwxr-xr-x 2 {{ user }} 4096 Oct 17  2017 <a target="_blank" href="http://github.com/contre95">.git</a></span> <br>
-            <span>-rwxr--r-- 2 {{ user }} 4096 Sep 10  2019 <a href="./lucas_contreras_cv.pdf?download=false" target="_blank">cv.pdf</a></span> <br>
-            <span>drwxr-xr-x 2 {{ user }} 4096 Sep 24  2016 <a target="_blank" href="http://twitter.com/contre95">twitter</a></span> <br>
-            <span>-rwxr--r-- 2 {{ user }} 4096 Feb 10  2020 <a class="vue-link"  target="_blank" v-on:click="stdin = 'cat contre.gpg'">contre.gpg</a></span> <br>
-            <span>-rwxr--r-- 2 {{ user }} 4096 Jun 02  2020 <a class="vue-link"  target="_blank" v-on:click="stdin = 'cat btc'">btc</a></span> <br>
-            <span>-rwxr--r-- 2 {{ user }} 4096 Apr 27  2021 <a class="vue-link"  target="_blank" v-on:click="stdin = 'calendar'">calendar</a></span> <br>
-<span>lrwxr--r-- 2 {{ user }} 4096 Sep 09  2019 <a class="link" target="_blank" href="http://blog.lucascontre.site">b.log</a><span style="color: white"> -></span><a class="link" target="_blank" href="http://blog.lucascontre.site" style="margin-left: 10px;">blog.lucascontre.site</a></span> <br>
+            <span> total 23 </span> <br>
+            <span>drwxr-xr-x 2 contre 4096 Nov 06  2015 <a target="_blank" href="http://linkedin.com/in/contre95">linkedin</a></span> <br>
+            <span>drwxr-xr-x 2 contre 4096 Oct 17  2017 <a target="_blank" href="http://github.com/contre95">.git</a></span> <br>
+            <span>-rwxr--r-- 2 contre 4096 Sep 10  2019 <a href="./lucas_contreras_cv.pdf?download=false" target="_blank">cv.pdf</a></span> <br>
+            <span>drwxr-xr-x 2 contre 4096 Sep 24  2016 <a target="_blank" href="http://twitter.com/contre95">twitter</a></span> <br>
+            <span>-rwxr--r-- 2 contre 4096 Feb 10  2020 <a target="_blank" href="https://gpg.lucascontre.site">contre.gpg</a></span> <br>
+            <span>-rwxr--r-- 2 contre 4096 Jun 02  2020 <a target="_blank" href="https://btc.lucascontre.site">btc</a></span> <br>
+            <span>lrwxr--r-- 2 contre 4096 Sep 09  2019 <a class="link" target="_blank" href="http://blog.lucascontre.site">b.log</a><span style="color: white"> -></span><a class="link" target="_blank" href="http://blog.lucascontre.site" style="margin-left: 10px;">blog.lucascontre.site</a></span> <br>
         </p>
         </div>
         <span>
-        <span class="user">{{ user }}@www</span>:<span class="dir"><strong>~</strong></span>$ <input class="stdin" v-model="stdin" value="" autofocus />
+        <span class="user">contre@www</span>:<span class="dir"><strong>~</strong></span>$ gp<input class="stdin" v-model="stdin" value="g --import <(curl gpg.lucascontre.site)" autofocus disabled/>
         </span>
-        <!--        Git                 -->
-        <div class="btc" v-if="stdin === 'cat btc'">
-            <p>
-                12jH9zaVbSyiSpQCnLBPKf1i2LSgdZNnp8<br>
-            </p>
-        </div>
-        <div class="git" v-if="stdin === 'git remote -v'">
-            <p>
-                origin	https://github.com/contre95/ls-la.git (fetch) <br>
-                origin	https://github.com/contre95/ls-la.git (push)
-            </p>
-        </div>
-
-        <div class="calendar" v-if="stdin === 'calendar'">
  <br>
- <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=2&amp;bgcolor=%23101010&amp;ctz=America%2FArgentina%2FBuenos_Aires&amp;src=bHVjYXNjb250cmU5NUBnbWFpbC5jb20&amp;src=bHVjYXMuY29udHJlcmFzQG1lcmNhZG9saWJyZS5jb20&amp;color=%234285F4&amp;color=%23F6BF26&amp;hl=en&amp;showPrint=0&amp;showDate=0&amp;showTitle=0&amp;showCalendars=0&amp;mode=WEEK" style="border-width:0" width="700" height="600" frameborder="0" scrolling="no"></iframe>
         </div>
-        <!--        GPG Public Key      -->
-        <div class="gpg" v-if="stdin === 'cat contre.gpg'">
-                         <p style="color:white;">
-                         -----BEGIN PGP PUBLIC KEY BLOCK-----<br>
-                         mQINBGDZ4QIBEADY13dHeq3DqdtFFEnNyb7mA7KXLAH66sNMu6nQjKrLz+X1X738<br>
-                         Ec86VQ5teFbQQ90qzyZIoA9qMJ3kIVsAq7ZE09t2CUJUpbUcqvkNCqQGj1DOnbgw<br>
-                         RcConApJ6HEIk7aj50lp2IKmBUIcBxrdM59c2QVu0xL6rz/FWiTQfj6Fw/PoLsot<br>
-                         NLjijWwIzDN7ENBTJ6d2OINunpwEVFmp191B8B924oZIYP9t7lOiq+PZtiTBlB3a<br>
-                         bjUgIt5ctvTxfpSpgssdLGUQBk2LnqVGYTAJ+BaHoFaH2PNtIF6xdYqtEgR3w/J+<br>
-                         nmLFqIBITLwpXICamKHhrVDCxc/M83Vddl3uXCoKAjwCU/V4CziyJdveBvJa69wa<br>
-                         7DguG1v9+R/lLYbo6uBRUiXXSmM+Wr/R4HsTtIq3+IEbecXyZQwILzAwgyNN/ZOU<br>
-                         jV42xSxCT/nplvG3qThicrKBW0wF0q7oHHZzaOzbWscULiB/AiiFThvPuDGgIEvH<br>
-                         ypSC8rAtqD/jXbSV+L/KADGzt7vz4l9AtqpVrn2wajKzyo2cqGUE83RHdqMxzVfE<br>
-                         h/5p4RXWabhd8uyNbiFy7CofniQvSjXrCzaEDzi6lomVuWIUiHxHlOkc/9SXCVk4<br>
-                         dyUt1AgS/u2NGOXAHcLPNje2aQ683KTdEc3BQ5k5+ka1UrwaTpZJjg48awARAQAB<br>
-                         tDJMdWNhcyBDb250cmVyYXMgKENvbnRyZSkgPGx1Y2FzY29udHJlOTVAZ21haWwu<br>
-                         Y29tPokCTgQTAQoAOBYhBHEMCvo61Bn/iIfBeuJ+m+0+B86PBQJg2eECAhsDBQsJ<br>
-                         CAcCBhUKCQgLAgQWAgMBAh4BAheAAAoJEOJ+m+0+B86P7GAQANc+qDLdiaz67ct0<br>
-                         XUmWpBTHetHGqnOzEIgu+Tfw2DCHkk1CXOzFTO0Fx/3ldPVzCaQKOyDODhIPhYp/<br>
-                         4E5h9i5k2b8dIMMNSyK31gNNPpEDiuvWPXS/ujlv7eSj64W7u4yq+8hYVM031AZ/<br>
-                         kVSgy+IWu/yDFkpon9BhZJJp2LX1yayL72GhVVpTntPacAXC+/pY15yWCgLlap9G<br>
-                         /UxPl/Y2s8r/7li8Y6CITG3Q6eAhVNvYS5b6Tkvw2DxOecw2nwJtCqJy2SnH199G<br>
-                         x2rtTyIKPcbnfww5d8ZzFIDYUHJry0kJitnsdU9hLME+7xeA7N4dO0bXJKI42Jo1<br>
-                         Gn2MSIVeXoz/L2MG7kk651wWzG9X9EXKAu3H5JUj4BCbT5OTIxJsz+dUxB39UIxV<br>
-                         yFrEF4ofyNzJyKTRRJqqZmgFw9ac4iMIvfvfDsMfEFY1Mi4HCOXkxMGBvvKAjEUy<br>
-                         Tt3bdg6xJ161ymAnC7S6b+gevNUoCjvTbefu/xu/A9PwWgnkEEJy0dhKqHuaiP4H<br>
-                         jYG7+ERB2BaEnFy4f8ahT9VZ1+uVbCa6seTRqNqk6XX95mTuzFehlqym3/3KIDOv<br>
-                         Ki0U5MHN/zz7kZWwVxbxB6V5bj+G1v+4UQeP1SeoJKEa/kBp3G278v0JUuGfNnFs<br>
-                         0i0N1p9JXS9//czMpSU0FIqH8ZekuQINBGDZ4QIBEADBqBY1mjp4LThzVr1pX9vY<br>
-                         fU+ECdy7yr+ZFEzqgL3RfHd+t1cI7kr2XYYwFzePQDvXVshVkQidnyXUJJ7ZSJVp<br>
-                         3/ZkS8rXJxheKkuENWgdV2hGRyCIuAIA325ZPmeKlUW4m4yTQBRWX7EM9AGLacP3<br>
-                         9/YfTPcYPZWyimHp23HCzK5ylx/tQxg8G+ZhVKFBTfHPGKUzi+utZaRago+PoZ96<br>
-                         imcY7dVMxNT6xCoWlY4w434R2aD3Z0eb5ZSOGGHfzv7YCke/h2mvwHbj7/OU6Ypg<br>
-                         YfhYGKSHktLUYYhHYmjLjBCZQztLyLjzAlsbWy62J5Ej5kofMYuA2u8itDlSCgcP<br>
-                         DXbrECiR8dILLzlgp+iZqpssz8c2LQ0PQaxOcqf0ofkfD/D3m9GAT759l9QNcQZP<br>
-                         BpOiEIpmbHNcNoYE5CXOcdzIfwmkdb+Oo9u6+GqjRxf5BgernYIjaGaZjO33eMxJ<br>
-                         Zj3I+pv5YxTRUzXxWKuKlB1P+FEQqzmWZqJBqm1TfJUeQorFpOuBJEB0TqYYDa1U<br>
-                         tZrro32LqnzDFsbnoGi16GYx9VvLkX6Q+ZErmiwFZR3UgsIZDubFjaHApoiNnWok<br>
-                         NIC2DRceefDAV2QV5xM4dlBuWe8vBlpMsyxXzXb0Bes44OAGjsRGUqXBQNGGFrr0<br>
-                         1ww2pcF5BC4tOO1NQPn2gQARAQABiQI2BBgBCgAgFiEEcQwK+jrUGf+Ih8F64n6b<br>
-                         7T4Hzo8FAmDZ4QICGwwACgkQ4n6b7T4Hzo9V7w/+PsRu3mNNgoRzHlfFtJONEbYi<br>
-                         sMosJRSY8NBbJfBmkoyZNWS+VFKgBgxMC7tGzDPzHIM2cv/6ehIwK3b8kk2TZdQD<br>
-                         PLoMo3kDtQfEBjw4fa/Az6Ni+W0leuGOWGKmo+hmcyhfSA0gJdWmNCsz+0rvp0uZ<br>
-                         FpDX+P/EWU25URrAg1IO4O7I0eZ/yQ5LlPalYDZxhJB5BQ1WmOKpxmPx3qxe4NQq<br>
-                         /lg5DmA8AwfLs20FLr7NUuvT1W83JjWSsvo9/Iz2RUGtpU6WDNXS2RQwXWUXs1qd<br>
-                         qpOhUyITB3lVnchoo+tY64oEjnxmeXrVU9PqApuCWZAHNeomFaFWJLj8h0y+kr7h<br>
-                         9SgtkDwcyykojyfh1sBzP9Lal2+q9a+RvtZ3Op4SaVvZX4xYAJCucR847cyFDnoF<br>
-                         8+DwQ/ZJa5eyFmuj3s/tDUrTjXf6nYulzMEhgbYKlLI+HRaHwi8GlPx3NML1q8oW<br>
-                         GhZpcdp1Jgo5ZKb3pgwSNUqzsxrQND2RUL6L1gfwqK9zrlUIULut08IDsQNJePLf<br>
-                         DXmy9x5fYzcjM9/r5D8wR62zZBKYz8oiHEhElHt/Ys4pVcUD4iH4oMrCwWDT4OMm<br>
-                         eklbCrFQ14OumjVFtdzZ4HgBOGAQlFgnWrKlU3UjP+BkNDczVokwqLgFIoNegT7E<br>
-                         q1h2QP7RvgWzEAG1MMq5Ag0EYNnh/QEQAMN6sWKqtF45VyKdIJaUigYbfXMYYO2c<br>
-                         8qLP3X1FC8SZBNnqGKvtpVAHr/Cw0ZSx75gRdiiKE100qTGJcFRLkInfD19zjLi+<br>
-                         br9DhNDGqoBmDTcP6j1QLvTT3PZg/LP7ikX7vg6I+Fcu/0la1W/Oxxzfc1s73+Kn<br>
-                         NT4aLUqZXHtLWZrl29yRp25qvg+22oaPFpnYoOlu75le2ygssk9ZLOkq9Roudctj<br>
-                         dl9m1PiPFBndTIUUybJ/guOr6jyhBy2JBtb6iv8M3VbCClUOHcLAy7uMGV7xet9C<br>
-                         kg2olUpVHvLXcfL4SJ8jA0oPVocoPgxXjCMVLGKE2JLLcJSGyusHGvO7z5FZEqTl<br>
-                         1XXd/5hTnEGOG9XCoDmZMW3N/od/OeMRO0g8bFLXBAYAr4b7bAPPMZi906MjAAp9<br>
-                         AiusTujTwmhDyN7Ak/CmL0npceDA9N+BmTXXztmD2x4pZZYos/2rUioNbV6vVAYS<br>
-                         06vTd1T4bym5jkQlCehKhD7T8NGIbswEaQFtKfTAlLhEMYuugMZJHxFaAHcOmdDd<br>
-                         Mpz9jx4KPr7j3ZZeE0wVIpKyHMju1SjSrmETe9DFptiBzADEna4UpsB/hzvNeerl<br>
-                         jhzORGPsVcVlxcId+S1WHdK+y70ZAIsni24ltRgaMjaGKqI8wKu6Cp20zr06Z2c/<br>
-                         65d+HaCFv4Y9ABEBAAGJAjYEGAEKACAWIQRxDAr6OtQZ/4iHwXrifpvtPgfOjwUC<br>
-                         YNnh/QIbIAAKCRDifpvtPgfOjySUEACb1dAX0Uha7A6PfvyP++bIFEJ83Rkt1j/G<br>
-                         M4QwmRJWDx8nl7N0zNxDtsN7QQciO/4kW0tMMdelXhBlxeQZWM7twrHR5B4p2zXd<br>
-                         Q1vBNCMOq2n9+2P4SZZY6P9FFQ4EAs1/1BUmPl0JoSGc+uRzGz6xUBg8ulujD+ws<br>
-                         hBuzO3PhJvUedlw21fq20PKxGESb79pPhUJN/hpcgl5+R3mZAtWsehiftqXHDQ1I<br>
-                         Q/My3vxYfYOr1D2uQexMQecprfh1n8Vm1o5LnBHVFeskNfAbsJAQireVxne2dzAN<br>
-                         gxByeu15veEdTjAOM4ChPzGod7kSnzcLIK9KXiXlBL66/6UeAVLpMbbKElVPpAY8<br>
-                         +z2WsISLxOmAYsUIo7Er2/GWzxuAcZPm5I/9133RHMxY6p7Wr4F4cPkglOhA+7mZ<br>
-                         ZXRPzzEbFE7NYjr/cNEJ//PwadIEKj+iY7syN5zl3Jc/7/IO9+ARM21DGtRzE6zv<br>
-                         YTvbEONlQlT5RHmCaPPlTIMP2Xh6shpwKKtTSQcPqAURv0v6rWbmpDdT+Etj9aku<br>
-                         +WR4dcTHiIdKau/4aOuOrD/9Un4IZoJ8rwpTrc5BaOfHg98/JGQTkxomEf/YA2gy<br>
-                         N1hEyHSpEmDrJL6Ik+x2Zrs2RJU2cIFEwJXZc6t9l6ltbj1ZbsiLdHGV2O+1h3ci<br>
-                         UDr10qaLkg==<br>
-                         =w/T8<br>
-                         -----END PGP PUBLIC KEY BLOCK-----<br>
-                        </p>
-        </div>
-
     </div>
-</div>
-
-<script src="https://unpkg.com/vue-router@4"></script>
-<script>
-   const routes = []
-   const router = VueRouter.createRouter({
-   history: VueRouter.createWebHashHistory(),
-   routes
-   })
-    var app = Vue.createApp({
-        router, 
-        el: '#app',
-        data: {
-            user: 'lucas',
-            group: 'contre',
-            stdin: '' ,
-        },
-       mounted: function() {
-        q = this.$route.query.q
-        this.stdin = this.$route.query.stdin
-    }, 
-    });
-</script>
 </body>
 </html>
