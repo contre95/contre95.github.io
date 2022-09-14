@@ -19,12 +19,13 @@ a:hover {
   color: white !important;
   text-decoration: underline;
 }
+
 .stdin {
-  outline: none;
+  /*outline: none;*/
   background-color: transparent;
   border: none;
   color: gray;
-  width: 500px;
+  width: 570px;
 }
 
 .terminal p .line span {
