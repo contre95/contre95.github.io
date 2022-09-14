@@ -1,80 +1,85 @@
 html,
 body {
-    margin: 0 auto;
-    font-size: 20px!important;
-    padding: 0;
-    background-color: #101010;
+  margin: 0 auto;
+  font-size: 20px !important;
+  padding: 0;
+  background-color: #101010;
 }
 /*#navBack1 {*/
-    /*margin-bottom: 10px;*/
+/*margin-bottom: 10px;*/
 /*}*/
 a:visited,
 a:link {
-    color: white !important;
-    text-decoration: none;
+  color: white !important;
+  text-decoration: none;
 }
 
 a:active,
 a:hover {
-    color: white !important;
-    text-decoration: underline;
+  color: white !important;
+  text-decoration: underline;
 }
 .stdin {
-    outline: none;
-    background-color: transparent;
-    border: none;
-    color: gray;
-    width: 500px;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  color: gray;
+  width: 500px;
+}
 
+.terminal p .line span {
+  padding-left: 1em;
 }
 
 .terminal {
-    /* position: absolute; */
-    /*text-align: left;*/
-    /* border: solid white 1px; */
-    /*min-width: 800px;*/
-    /*min-height: 300px;*/
-    text-align: left;
-    margin-top: 40px;
-    margin-left: 40px;
+  /* position: absolute; */
+  /*text-align: left;*/
+  /* border: solid white 1px; */
+  /*min-width: 800px;*/
+  /*min-height: 300px;*/
+  text-align: justify;
+  margin-top: 40px;
+  margin-left: 40px;
 }
 
 .ls a:visited,
-.ls a:link, .ls .vue-link {
-    color: #5bb0f7 !important;
-    text-decoration: none;
-    margin-left: 10px;
-    cursor: pointer;
+.ls a:link,
+.ls .vue-link {
+  color: #5bb0f7 !important;
+  text-decoration: none;
+  margin-left: 10px;
+  cursor: pointer;
 }
 
 .ls a:active,
 .ls a:hover {
-    color: #5bb0f7 !important;
-    text-decoration: underline;
+  color: #5bb0f7 !important;
+  text-decoration: underline;
 }
 p {
-    line-height: 25px;
+  line-height: 25px;
 }
-p, span {
-    margin-top: 5px;
-    margin-bottom: 10px;
-    text-align: left;
+p,
+span {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  text-align: left;
+  color: white;
+  padding: 0;
+  font-family: "JetBrains Mono", monospace;
+}
 
-    color: white;
-    padding: 0;
-    font-family: 'Ubuntu Mono', monospace;
-}
-.notes .directory{
-    color: #5bb0f7 !important;
+.notes .directory {
+  color: #5bb0f7 !important;
 }
 
 .dir {
-    color: #0085f1;
+  color: #0085f1;
 }
 
 .user {
-    /* color: green; */
-    color: #00f100;
+  /* color: green; */
+  color: #00f100;
 }
 
 @media screen and (max-width: 400px) {
@@ -84,23 +89,23 @@ p, span {
   }
 }
 
-input{
-    font-size: 19px!important;
+input {
+  font-size: 19px !important;
 }
 
 @keyframes condemned_blink_effect {
-    0% {
-        visibility: hidden;
-    }
-    50% {
-        visibility: hidden;
-    }
-    100% {
-        visibility: visible;
-    }
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
 }
 
 .link {
-    color: #5bb0f7 !important;
-    background-color: rgba(147, 147, 211, 0.3);
+  color: #5bb0f7 !important;
+  background-color: rgba(147, 147, 211, 0.3);
 }
